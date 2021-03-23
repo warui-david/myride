@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
@@ -30,12 +31,16 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['GET'],
                 ],
             ],
         ];
@@ -61,6 +66,21 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionDrivers()
+    {
+        return $this->render('drivers');
+    }
+
+    public function actionDriverprofile()
+    {
+        return $this->render('driverprofile');
+    }
+
+    public function actionRides()
+    {
+        return $this->render('rides');
     }
 
     /**
